@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:wght@300;400;500;700&amp;family=Space+Grotesk:wght@400;500;700" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #10b981;}
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Space Grotesk", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden text-slate-100">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1">
+<div class="flex w-72 flex-col bg-[#0f172a] p-4 border-r border-slate-800">
+<div class="flex h-full flex-col justify-between">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCE6JQxfu8Thzy3SVMLrpywbawZ9rMlZj8ROURepZPVz5i41J6WKpb51x7xBaRtjOCR9zhmDTTqUf_o12t0jvQKOCP1uqQun5LA6JiLbMSU9seTExK7FTAHsLJQKZv-who7UAk6UclTRp5F6j5dP4xPsex4iecGP7XQ5qGbgb2TMIhfDncepXZ6sGrxJ42wmSxvc2x95MWFM29sg5Kgvo4imeGJgVnpCqsJmbJFSbivB8HWG9iOdhRUo_zh1_rbCb1-MNGd5AUT-74");'></div>
+<h1 class="text-slate-100 text-xl font-bold">GeoBlock</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-slate-300 hover:bg-slate-800" href="inicio.html">
+<span class="material-symbols-outlined"> home </span>
+<p class="text-base font-normal">Inicio</p>
+</a>
+<a class="flex items-center gap-3 rounded-md bg-emerald-500/10 px-3 py-2 text-[var(--primary-color)]" href="MapasdeConfianza.html">
+<span class="material-symbols-outlined"> map </span>
+<p class="text-base font-medium">Mapas</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-slate-300 hover:bg-slate-800" href="datosGraficos.html">
+<span class="material-symbols-outlined"> database </span>
+<p class="text-base font-normal">Datos</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-slate-300 hover:bg-slate-800" href="HistorialdeRegistro.html">
+<span class="material-symbols-outlined">
+                                        swap_horiz
+                                    </span>
+<p class="text-base font-normal">Transacciones</p>
+</a>
+<div class="border-t border-slate-700 my-2"></div>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-slate-300 hover:bg-slate-800" href="login.html">
+<span class="material-symbols-outlined"> login </span>
+<p class="text-base font-normal">Iniciar Sesión</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-slate-300 hover:bg-slate-800" href="registro.html">
+<span class="material-symbols-outlined"> person_add </span>
+<p class="text-base font-normal">Registrarse</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-slate-300 hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined"> help </span>
+<p class="text-base font-normal">Ayuda y Feedback</p>
+</a>
+</div>
+</div>
+</div>
+<main class="flex-1 bg-slate-900 p-6">
+<div class="flex flex-wrap items-center justify-between gap-4 pb-6">
+<h1 class="text-4xl font-bold tracking-tighter text-slate-100">
+                            Mapas de Confianza
+                        </h1>
+<button class="flex items-center justify-center gap-2 rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-slate-900">
+<span class="material-symbols-outlined">
+                                add
+                            </span>
+                            Nuevo Mapa
+                        </button>
+</div>
+<div class="mb-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                                search
+                            </span>
+<input class="w-full rounded-md border-slate-700 bg-slate-800 py-2 pl-10 pr-4 text-base text-slate-100 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500" placeholder="Buscar mapas..." type="text"/>
+</div>
+</div>
+<section class="mb-8">
+<h2 class="mb-4 text-2xl font-bold tracking-tight text-slate-100">
+                            Mapas Disponibles
+                        </h2>
+<div class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-6">
+<div class="group flex cursor-pointer flex-col overflow-hidden rounded-md bg-slate-800 shadow-sm transition-all hover:shadow-lg hover:shadow-emerald-500/20 hover:ring-2 hover:ring-emerald-500">
+<div class="aspect-video w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4hqV3Bpd-Y6xPOqxX39YKswXJUVjTc_GYbWis8quVbkNDwxFMSu456V2fGuZxEBxfaVueqt8DZGTE8nnrw07WeSpM8NKu_UWLbCi3iSAHic3S92d1SPuHEIGIzs80uODyf6jpJ1p1oawbIQNhsOHCJpk__XL9F6RfpmDsv9gbgvgFr5fPcRDa_3ZRc-2kAJS1FkJ45KzX2tqn1E4zt1Ly2PVqrxu-3-5nMzPtKwbDr8d_HzDy2UPs77dwlQpNmaSjTY4Lhu670Bc");'></div>
+<div class="p-4">
+<p class="text-lg font-semibold text-slate-100">
+                                        Mapa de Confianza de Oro
+                                    </p>
+<p class="text-sm text-slate-400">
+                                        Creado por GeoData Solutions
+                                    </p>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col overflow-hidden rounded-md bg-slate-800 shadow-sm transition-all hover:shadow-lg hover:shadow-emerald-500/20 hover:ring-2 hover:ring-emerald-500">
+<div class="aspect-video w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrspGexkQdnFWnY4kD0kSgmFHTdJ3Wrt0wLhYLgFvJdPP9dIQ_t59osT3v9TFfhVFA4UQw5szYWVJ3OgVj-KYKcm8eFGdOtAqDfqsqGLD2zu_icnKGpiQwxS0aS4WbrHznAHUf3T7cDuJ3pLrectN07yj1fZh8pRuuuGw0wlYRnzAhpdSsbbGHreQKvCefIL0mGcU4Rnmk1GJIaCaI2kIUPEwp3_P4_iQ5lVbHmblP_OGFOh8olG0xbqUELy56sb3qZGBowRJiHCs");'></div>
+<div class="p-4">
+<p class="text-lg font-semibold text-slate-100">
+                                        Mapa de Confianza de Cobre
+                                    </p>
+<p class="text-sm text-slate-400">
+                                        Creado por Mineral Insights
+                                    </p>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col overflow-hidden rounded-md bg-slate-800 shadow-sm transition-all hover:shadow-lg hover:shadow-emerald-500/20 hover:ring-2 hover:ring-emerald-500">
+<div class="aspect-video w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQwwTMS4zrpm2fk6YuwlWkMSUcbQ_8g4QoFbfyXqGykpMwY55ZMlLWDfBNcyfCGMDp-UlONnK9hiyiSwZdHObnsiJ5hEcyYLi07rIqn8y910MNMNZWwCwCPhXNC6u0nRC-LVvdQp7SD0iLKWr9B9Lgk4-UzGvm2rNL880k8Wnvc3j17kWifbRracYpnS3yuurYipaz2jP0mBuLBXS_x8KyWrdmR_lEWtWviR4ydYvEW1GbiRCL5Dl34c67OHw4vkM3iP3FGH3YU5I");'></div>
+<div class="p-4">
+<p class="text-lg font-semibold text-slate-100">
+                                        Mapa de Confianza de Plata
+                                    </p>
+<p class="text-sm text-slate-400">
+                                        Creado por SilverStream Analytics
+                                    </p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="mb-4 text-2xl font-bold tracking-tight text-slate-100">
+                            Mapa Cargado
+                        </h2>
+<div class="rounded-md border-2 border-dashed border-slate-700 bg-slate-800 p-6">
+<div class="aspect-video w-full rounded-md bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVSbldFYNc_Wy_G6O9C50-6mqd3apToZCxw4TXtmoYpFVytV-XyqWVb7zEJtzzwDlXQyKPQUhXj59rGPV7yYJ0uanbR8gY3XqrMjZ4W6lfmABu_krUGewJZGToQq5rgnnhZQmjUgv3FW5s1nmVl32yPZzN-OQsbi1aV25OaINy5qpvnoy-r7_udjVA_-zAtbHaVImM7F5ml26hzlpTVikyQIe0OIDOQnjKrs4_O_NRerrDIMgxSKnW5lexiTC1gIQGwvmJzhY07nI");'></div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</div>
+
+</body></html>

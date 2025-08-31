@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto+Mono:wght@400;500;700&amp;family=Source+Sans+Pro:wght@400;600;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>GeoData Explorer</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --background: hsl(220 20% 98%);
+      --foreground: hsl(220 20% 10%);
+      --card: hsl(220 20% 96%);
+      --card-foreground: hsl(220 20% 10%);
+      --popover: hsl(220 20% 96%);
+      --popover-foreground: hsl(220 20% 10%);
+      --primary: hsl(175, 85%, 45%);
+      --primary-foreground: hsl(175, 85%, 95%);
+      --secondary: hsl(220 10% 90%);
+      --secondary-foreground: hsl(220 10% 20%);
+      --muted: hsl(220 10% 90%);
+      --muted-foreground: hsl(220 10% 45%);
+      --accent: hsl(175, 85%, 65%);
+      --accent-foreground: hsl(220 10% 15%);
+      --border: hsl(220 10% 85%);
+      --input: hsl(220 10% 80%);
+      --ring: hsl(175, 85%, 45%);
+      --radius: 0.5rem;
+    }
+    .dark {
+        --background: hsl(180, 15%, 8%);
+        --foreground: hsl(180, 5%, 95%);
+        --card: hsl(180, 15%, 10%);
+        --card-foreground: hsl(180, 5%, 95%);
+        --popover: hsl(180, 15%, 10%);
+        --popover-foreground: hsl(180, 5%, 95%);
+        --primary: hsl(175, 75%, 40%);
+        --primary-foreground: hsl(180, 15%, 8%);
+        --secondary: hsl(180, 10%, 20%);
+        --secondary-foreground: hsl(180, 5%, 90%);
+        --muted: hsl(180, 10%, 20%);
+        --muted-foreground: hsl(180, 5%, 70%);
+        --accent: hsl(175, 75%, 50%);
+        --accent-foreground: hsl(180, 5%, 98%);
+        --border: hsl(180, 10%, 25%);
+        --input: hsl(180, 10%, 30%);
+        --ring: hsl(175, 75%, 40%);
+    }
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+  </style>
+</head>
+<body class="dark" style='font-family: "Source Sans Pro", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="flex h-full grow">
+<aside class="flex h-full min-h-screen w-72 flex-col justify-between border-r border-border bg-card p-4">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col">
+<h1 class="text-foreground text-xl font-bold tracking-tight">GeoData Explorer</h1>
+<p class="text-muted-foreground text-sm font-mono">v1.0</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-md bg-primary/20 px-3 py-2 text-primary" href="inicio.html">
+<span class="material-symbols-outlined"> view_in_ar </span>
+<p class="text-sm font-semibold">Visor 3D</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground" href="datosGraficos.html">
+<span class="material-symbols-outlined"> layers </span>
+<p class="text-sm font-medium">Fallos y Horizontes</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground" href="MapasdeConfianza.html">
+<span class="material-symbols-outlined"> map </span>
+<p class="text-sm font-medium">Mapas de Confianza</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground" href="HistorialdeRegistro.html">
+<span class="material-symbols-outlined"> database </span>
+<p class="text-sm font-medium">Blockchain Registry</p>
+</a>
+<div class="border-t border-border my-2"></div>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground" href="login.html">
+<span class="material-symbols-outlined"> login </span>
+<p class="text-sm font-medium">Iniciar Sesión</p>
+</a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground" href="registro.html">
+<span class="material-symbols-outlined"> person_add </span>
+<p class="text-sm font-medium">Registrarse</p>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-sm font-medium text-muted-foreground">Tema</p>
+<button class="rounded-md p-2 text-muted-foreground hover:bg-muted">
+<span class="material-symbols-outlined"> light_mode </span>
+</button>
+<button class="rounded-md bg-muted p-2 text-foreground">
+<span class="material-symbols-outlined"> dark_mode </span>
+</button>
+</div>
+</aside>
+<main class="flex-1 overflow-auto">
+<div class="p-6">
+<header class="flex flex-wrap items-center justify-between gap-4">
+<h1 class="text-4xl font-bold tracking-tight text-foreground">Visualizador de Datos Sísmicos 3D</h1>
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"> search </span>
+<input class="form-input w-full rounded-md border-border bg-card py-2 pl-10 pr-4 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary" placeholder="Buscar en el conjunto de datos" type="search"/>
+</div>
+</header>
+<div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+<div class="lg:col-span-2">
+<div class="rounded-lg border border-border bg-card">
+<div class="border-b border-border p-4">
+<h2 class="text-xl font-semibold tracking-tight text-foreground">Visualización 3D</h2>
+</div>
+<div class="aspect-[16/9] w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4SWo1vRCxemItTpTWei9-GjrvT-X1uNXAcRDz8HBshChxAXyIF1LMWhTSkaCxBhFV9Or-S8CYwN1hYEvxCLogg5TH6zeWqvC5zSYkiYAeoXqrjaWraStC14FBvXzH6Q3C7_jkJjV3DVR1DEP9wbHEH0FAEcWjXevj8fvcz7NxQZBXOZco5imke8Ku0MiTplb3PUN89ya9LyZ_sQItVncxFxUlI_vR8o1a21NgmKJs5E1zbq7ZKxthfxrzWlae3heCZ4yOOMTXwiw");'></div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="rounded-lg border border-border bg-card">
+<div class="border-b border-border p-4">
+<h2 class="text-xl font-semibold tracking-tight text-foreground">Controles de Visualización</h2>
+</div>
+<div class="space-y-4 p-4">
+<div>
+<label class="mb-2 flex justify-between text-sm font-medium text-foreground" for="inline-slider">
+<span>Inline</span>
+<span class="font-mono text-sm text-accent">50</span>
+</label>
+<input class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-muted accent-primary" id="inline-slider" max="100" min="0" type="range" value="50"/>
+</div>
+<div>
+<label class="mb-2 flex justify-between text-sm font-medium text-foreground" for="crossline-slider">
+<span>Crossline</span>
+<span class="font-mono text-sm text-accent">75</span>
+</label>
+<input class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-muted accent-primary" id="crossline-slider" max="100" min="0" type="range" value="75"/>
+</div>
+<div>
+<label class="mb-2 flex justify-between text-sm font-medium text-foreground" for="depth-slider">
+<span>Profundidad</span>
+<span class="font-mono text-sm text-accent">1000m</span>
+</label>
+<input class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-muted accent-primary" id="depth-slider" max="2000" min="0" type="range" value="1000"/>
+</div>
+<div class="flex gap-4 pt-2">
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-primary py-2 px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/80">
+<span class="material-symbols-outlined text-base"> zoom_in </span>
+<span>Zoom</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-secondary py-2 px-4 text-sm font-semibold text-secondary-foreground hover:bg-secondary/80">
+<span class="material-symbols-outlined text-base"> contrast </span>
+<span>Contraste</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="mb-4 text-2xl font-bold tracking-tight text-foreground">Análisis de Fallas</h2>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div class="rounded-lg border border-border bg-card p-4">
+<h3 class="mb-4 font-semibold text-foreground">Strike de Fallas</h3>
+<div class="grid h-48 grid-flow-col items-end gap-4">
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 100%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">0-30</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 50%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">30-60</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 90%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">60-90</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 20%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">90-120</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 70%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">120-150</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 20%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">150-180</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg border border-border bg-card p-4">
+<h3 class="mb-4 font-semibold text-foreground">Dip de Fallas</h3>
+<div class="grid h-48 grid-flow-col items-end gap-4">
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 80%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">0-15</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 100%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">15-30</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 40%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">30-45</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 90%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">45-60</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 20%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">60-75</span>
+</div>
+<div class="group relative flex h-full flex-col justify-end">
+<div class="h-full w-full rounded-t-sm bg-primary/20 transition-colors group-hover:bg-primary/40" style="height: 30%;"></div>
+<span class="mt-1 text-center text-xs font-mono text-muted-foreground">75-90</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

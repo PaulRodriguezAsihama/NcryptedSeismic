@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoData Explorer - Plataforma de Análisis de Suelos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --background: hsl(220 20% 98%);
+            --foreground: hsl(220 20% 10%);
+            --card: hsl(220 20% 96%);
+            --card-foreground: hsl(220 20% 10%);
+            --popover: hsl(220 20% 96%);
+            --popover-foreground: hsl(220 20% 10%);
+            --primary: hsl(175, 85%, 45%);
+            --primary-foreground: hsl(175, 85%, 95%);
+            --secondary: hsl(220 10% 90%);
+            --secondary-foreground: hsl(220 10% 20%);
+            --muted: hsl(220 10% 90%);
+            --muted-foreground: hsl(220 10% 45%);
+            --accent: hsl(175, 85%, 65%);
+            --accent-foreground: hsl(220 10% 15%);
+            --border: hsl(220 10% 85%);
+            --input: hsl(220 10% 80%);
+            --ring: hsl(175, 85%, 45%);
+            --radius: 0.5rem;
+        }
+        .dark {
+            --background: hsl(180, 15%, 8%);
+            --foreground: hsl(180, 5%, 95%);
+            --card: hsl(180, 15%, 10%);
+            --card-foreground: hsl(180, 5%, 95%);
+            --popover: hsl(180, 15%, 10%);
+            --popover-foreground: hsl(180, 5%, 95%);
+            --primary: hsl(175, 75%, 40%);
+            --primary-foreground: hsl(180, 15%, 8%);
+            --secondary: hsl(180, 10%, 20%);
+            --secondary-foreground: hsl(180, 5%, 90%);
+            --muted: hsl(180, 10%, 20%);
+            --muted-foreground: hsl(180, 5%, 70%);
+            --accent: hsl(175, 75%, 50%);
+            --accent-foreground: hsl(180, 5%, 98%);
+            --border: hsl(180, 10%, 25%);
+            --input: hsl(180, 10%, 30%);
+            --ring: hsl(175, 75%, 40%);
+        }
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+        }
+    </style>
+</head>
+<body class="dark" style='font-family: "Source Sans Pro", sans-serif;'>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-card border-b border-border">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary-foreground text-xl">terrain</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-foreground">GeoData Explorer</h1>
+                            <p class="text-sm text-muted-foreground">Plataforma de Análisis de Suelos</p>
+                        </div>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a href="inicio.html" class="text-muted-foreground hover:text-foreground transition-colors">Inicio</a>
+                        <a href="datosGraficos.html" class="text-muted-foreground hover:text-foreground transition-colors">Datos</a>
+                        <a href="MapasdeConfianza.html" class="text-muted-foreground hover:text-foreground transition-colors">Mapas</a>
+                        <a href="HistorialdeRegistro.html" class="text-muted-foreground hover:text-foreground transition-colors">Registro</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="login.html" class="text-muted-foreground hover:text-foreground transition-colors">Iniciar Sesión</a>
+                        <a href="registro.html" class="bg-primary hover:bg-primary/80 text-primary-foreground px-4 py-2 rounded-lg transition-colors">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 container mx-auto px-6 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-foreground mb-4">Bienvenido a GeoData Explorer</h2>
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    Plataforma integral para el análisis y visualización de datos geológicos y sísmicos
+                </p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <a href="inicio.html" class="group">
+                    <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 group-hover:border-primary">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-2xl">view_in_ar</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Visor 3D</h3>
+                        <p class="text-sm text-muted-foreground">Visualización interactiva de datos sísmicos en 3D</p>
+                    </div>
+                </a>
+
+                <a href="datosGraficos.html" class="group">
+                    <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 group-hover:border-primary">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-2xl">layers</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Fallos y Horizontes</h3>
+                        <p class="text-sm text-muted-foreground">Análisis de fallas geológicas y horizontes</p>
+                    </div>
+                </a>
+
+                <a href="MapasdeConfianza.html" class="group">
+                    <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 group-hover:border-primary">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-2xl">map</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Mapas de Confianza</h3>
+                        <p class="text-sm text-muted-foreground">Visualización de mapas de confianza geológica</p>
+                    </div>
+                </a>
+
+                <a href="HistorialdeRegistro.html" class="group">
+                    <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 group-hover:border-primary">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-2xl">database</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Registro Blockchain</h3>
+                        <p class="text-sm text-muted-foreground">Gestión de registros en blockchain</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-card border border-border rounded-lg p-8">
+                <h3 class="text-2xl font-bold text-foreground mb-6">Acciones Rápidas</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="inicio.html" class="flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors">
+                        <span class="material-symbols-outlined text-primary">play_arrow</span>
+                        <span class="text-foreground">Iniciar Visualización 3D</span>
+                    </a>
+                    <a href="datosGraficos.html" class="flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors">
+                        <span class="material-symbols-outlined text-primary">upload</span>
+                        <span class="text-foreground">Cargar Datos</span>
+                    </a>
+                    <a href="MapasdeConfianza.html" class="flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors">
+                        <span class="material-symbols-outlined text-primary">explore</span>
+                        <span class="text-foreground">Explorar Mapas</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-card border-t border-border py-8">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center gap-4 mb-4 md:mb-0">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary-foreground">terrain</span>
+                        </div>
+                        <span class="text-muted-foreground">© 2024 GeoData Explorer</span>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <a href="inicio.html" class="text-muted-foreground hover:text-foreground transition-colors">Inicio</a>
+                        <a href="datosGraficos.html" class="text-muted-foreground hover:text-foreground transition-colors">Datos</a>
+                        <a href="MapasdeConfianza.html" class="text-muted-foreground hover:text-foreground transition-colors">Mapas</a>
+                        <a href="HistorialdeRegistro.html" class="text-muted-foreground hover:text-foreground transition-colors">Registro</a>
+                        <a href="login.html" class="text-muted-foreground hover:text-foreground transition-colors">Iniciar Sesión</a>
+                        <a href="registro.html" class="text-muted-foreground hover:text-foreground transition-colors">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

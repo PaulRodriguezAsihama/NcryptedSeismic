@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  seismic-dev:
+    build: .
+    container_name: seismic-ml-dev
+    volumes:
+      - ./code:/workspace
+      - ./data:/data
+      - ./outputs:/outputs
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8888:8888"
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  jupyter:
+    build: .
+    container_name: seismic-jupyter
+    volumes:
+      - ./code:/workspace
+      - ./data:/data
+      - ./outputs:/outputs
+    ports:
+      - "8889:8888"
+    command: jupyter lab --ip=0.0.0.0 --no-browser --allow-root

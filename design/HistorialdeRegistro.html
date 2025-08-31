@@ -1,0 +1,287 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:wght@300;400;500;700&amp;family=Roboto+Mono:wght@400;500" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    :root {
+      --font-family-sans: 'Roboto', sans-serif;
+      --font-family-mono: 'Roboto Mono', monospace;
+    }
+    .bubble-chart-container .bubble {
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .bubble-chart-container .bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      z-index: 10;
+    }
+    .bubble-chart-container .bubble .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    }
+    .bubble-chart-container .bubble:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }.bubble-chart-container:has(.bubble-red:active) ~ .table-container .table-row:not(:has(.license-red)) {
+        display: none;
+    }
+     .bubble-chart-container:has(.bubble-green:active) ~ .table-container .table-row:not(:has(.license-green)) {
+        display: none;
+    }
+     .bubble-chart-container:has(.bubble-blue:active) ~ .table-container .table-row:not(:has(.license-blue)) {
+        display: none;
+    }
+    .bubble-chart-container:has(.bubble-gray:active) ~ .table-container .table-row:not(:has(.license-gray)) {
+        display: none;
+    }
+    </style>
+</head>
+<body class="bg-[#0A192F]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style="font-family: var(--font-family-sans);">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#173A5E] px-10 py-3 bg-[#0A192F]">
+<div class="flex items-center gap-4 text-gray-100">
+<div class="size-6 text-[#10B981]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#E2E8F0] text-xl font-bold leading-tight tracking-[-0.015em]">GeoDataChain</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<nav class="flex items-center gap-6">
+<a class="text-[#94A3B8] hover:text-[#10B981] text-sm font-medium leading-normal" href="inicio.html">Inicio</a>
+<a class="text-[#94A3B8] hover:text-[#10B981] text-sm font-medium leading-normal" href="datosGraficos.html">Datasets</a>
+<a class="text-[#94A3B8] hover:text-[#10B981] text-sm font-medium leading-normal" href="datosGraficos.html">Modelos</a>
+<a class="text-[#94A3B8] hover:text-[#10B981] text-sm font-medium leading-normal" href="HistorialdeRegistro.html">Licencias</a>
+<a class="text-[#94A3B8] hover:text-[#10B981] text-sm font-medium leading-normal" href="login.html">Iniciar Sesión</a>
+<a class="text-[#94A3B8] hover:text-[#10B981] text-sm font-medium leading-normal" href="registro.html">Registrarse</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-[#94A3B8] hover:bg-[#173A5E] hover:text-[#10B981]">
+<span class="material-symbols-outlined"> notifications </span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwKW6rUETt_6CWuaJHH5MEqWEXajyLkBJyJ40NEM7udE_dZRFvgwasArBWWx05Wd29HZ6L1KEVHoWEHbW4tdb0S9R1_cYSMYP92WXTnf2Mt0KsfHjEgJj6HcU2049QO2oAyBJN0xFAh4YgcRrT7VZe22Bi6CJDBL3DPxIn5xPQ5v2yPYoGL8DAHFJbqBP5HhmliJObOZu2LW2-NTktd3TedxxKPFJmISN2aJ86Peiok6m5Yt1tJihSYCZw-NWN8zUM-Yz96q16RYI");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+<h1 class="text-[#E2E8F0] text-3xl font-bold leading-tight">Gestor de Registros Blockchain</h1>
+<button class="flex items-center justify-center gap-2 rounded-md bg-[#10B981] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#10B981]/80">
+<span class="material-symbols-outlined"> add_circle </span>
+<span class="truncate">Registrar en blockchain</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+<div class="overflow-hidden rounded-lg border border-[#173A5E] bg-[#0F2A47] shadow-sm @container lg:col-span-2 table-container">
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-[#173A5E]">
+<thead class="bg-[#173A5E]">
+<tr>
+<th class="table-column-1 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#94A3B8]" scope="col">Dataset</th>
+<th class="table-column-2 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#94A3B8]" scope="col">Tipo de Licencia</th>
+<th class="table-column-3 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#94A3B8]" scope="col">Estado</th>
+<th class="table-column-4 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#94A3B8]" scope="col">Hash</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#173A5E] bg-[#0F2A47]">
+<tr class="table-row hover:bg-[#173A5E]/50">
+<td class="table-column-1 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal">Dataset A</td>
+<td class="table-column-2 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal"><span class="license-red text-[#F87171]">Comercial</span></td>
+<td class="table-column-3 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0]">
+<span class="inline-flex items-center rounded-full bg-emerald-900/50 px-2.5 py-0.5 text-xs font-medium text-emerald-300">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-emerald-400" fill="currentColor" viewBox="0 0 8 8">
+<circle cx="4" cy="4" r="3"></circle>
+</svg>
+                                  Registrado
+                                </span>
+</td>
+<td class="table-column-4 whitespace-nowrap px-6 py-4 text-sm font-normal text-[#10B981]" style="font-family: var(--font-family-mono);">0xabcdef...7890</td>
+</tr>
+<tr class="table-row hover:bg-[#173A5E]/50">
+<td class="table-column-1 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal">Dataset B</td>
+<td class="table-column-2 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal"><span class="license-blue text-[#60A5FA]">Investigación</span></td>
+<td class="table-column-3 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0]">
+<span class="inline-flex items-center rounded-full bg-emerald-900/50 px-2.5 py-0.5 text-xs font-medium text-emerald-300">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-emerald-400" fill="currentColor" viewBox="0 0 8 8">
+<circle cx="4" cy="4" r="3"></circle>
+</svg>
+                                  Registrado
+                                </span>
+</td>
+<td class="table-column-4 whitespace-nowrap px-6 py-4 text-sm font-normal text-[#10B981]" style="font-family: var(--font-family-mono);">0x987654...cdef</td>
+</tr>
+<tr class="table-row hover:bg-[#173A5E]/50">
+<td class="table-column-1 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal">Dataset C</td>
+<td class="table-column-2 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal"><span class="license-green text-[#34D399]">Uso Educativo</span></td>
+<td class="table-column-3 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0]">
+<span class="inline-flex items-center rounded-full bg-emerald-900/50 px-2.5 py-0.5 text-xs font-medium text-emerald-300">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-emerald-400" fill="currentColor" viewBox="0 0 8 8">
+<circle cx="4" cy="4" r="3"></circle>
+</svg>
+                                  Registrado
+                                </span>
+</td>
+<td class="table-column-4 whitespace-nowrap px-6 py-4 text-sm font-normal text-[#10B981]" style="font-family: var(--font-family-mono);">0xfedcba...4321</td>
+</tr>
+<tr class="table-row hover:bg-[#173A5E]/50">
+<td class="table-column-1 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal">Dataset D</td>
+<td class="table-column-2 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal"><span class="license-gray text-gray-500">No Disponible</span></td>
+<td class="table-column-3 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0]">
+<span class="inline-flex items-center rounded-full bg-red-900/50 px-2.5 py-0.5 text-xs font-medium text-red-300">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-red-400" fill="currentColor" viewBox="0 0 8 8">
+<circle cx="4" cy="4" r="3"></circle>
+</svg>
+                                  Error
+                                </span>
+</td>
+<td class="table-column-4 whitespace-nowrap px-6 py-4 text-sm font-normal text-[#10B981]" style="font-family: var(--font-family-mono);">0x123456...dcba</td>
+</tr>
+<tr class="table-row hover:bg-[#173A5E]/50">
+<td class="table-column-1 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal">Dataset A</td>
+<td class="table-column-2 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0] font-normal"><span class="license-red text-[#F87171]">Comercial</span></td>
+<td class="table-column-3 whitespace-nowrap px-6 py-4 text-sm text-[#E2E8F0]">
+<span class="inline-flex items-center rounded-full bg-emerald-900/50 px-2.5 py-0.5 text-xs font-medium text-emerald-300">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-emerald-400" fill="currentColor" viewBox="0 0 8 8">
+<circle cx="4" cy="4" r="3"></circle>
+</svg>
+                                  Registrado
+                                </span>
+</td>
+<td class="table-column-4 whitespace-nowrap px-6 py-4 text-sm font-normal text-[#10B981]" style="font-family: var(--font-family-mono);">0xabcdef...4321</td>
+</tr>
+</tbody>
+</table>
+</div>
+<style>
+                        @container (max-width: 640px) {
+                          .table-column-1,
+                          .table-column-4 {
+                            display: none;
+                          }
+                        }
+                        @container (max-width: 480px) {
+                          .table-column-2 {
+                            display: none;
+                          }
+                        }
+                      </style>
+</div>
+<div class="flex flex-col gap-6 rounded-lg border border-[#173A5E] bg-[#0F2A47] p-6 shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="text-lg font-semibold text-[#E2E8F0]">Distribución de Licencias</h3>
+<p class="text-sm text-[#94A3B8] font-normal">Haz clic en una burbuja para filtrar la tabla</p>
+</div>
+<div class="relative" data-state="closed">
+<button aria-expanded="false" aria-haspopup="true" class="text-[#94A3B8] hover:text-[#10B981]" id="options-menu" type="button">
+<span class="material-symbols-outlined"> more_vert </span>
+</button>
+<div aria-labelledby="options-menu" aria-orientation="vertical" class="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#173A5E] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu">
+<div class="py-1" role="none">
+<a class="flex items-center gap-2 px-4 py-2 text-sm text-[#E2E8F0] hover:bg-[#0F2A47] hover:text-[#10B981]" href="#" role="menuitem">
+<span class="material-symbols-outlined text-base"> download </span>
+<span>Exportar a CSV</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 text-sm text-[#E2E8F0] hover:bg-[#0F2A47] hover:text-[#10B981]" href="#" role="menuitem">
+<span class="material-symbols-outlined text-base"> data_object </span>
+<span>Exportar a JSON</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 text-sm text-[#E2E8F0] hover:bg-[#0F2A47] hover:text-[#10B981]" href="#" role="menuitem">
+<span class="material-symbols-outlined text-base"> settings </span>
+<span>Configuración</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-[#94A3B8]" for="bubble-size">Tamaño de la burbuja por:</label>
+<select class="mt-1 block w-full rounded-md border-[#173A5E] bg-[#0A192F] py-2 pl-3 pr-10 text-base text-[#E2E8F0] focus:border-[#10B981] focus:outline-none focus:ring-[#10B981] sm:text-sm" id="bubble-size" name="bubble-size">
+<option selected="">Número de datasets</option>
+<option>Valor de la licencia</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-[#94A3B8]" for="color-scheme">Esquema de color</label>
+<div class="mt-2 flex items-center gap-2">
+<button class="h-8 w-8 rounded-full bg-[#F87171] ring-2 ring-[#10B981] ring-offset-2 ring-offset-[#0F2A47]"></button>
+<button class="h-8 w-8 rounded-full bg-[#60A5FA]"></button>
+<button class="h-8 w-8 rounded-full bg-[#34D399]"></button>
+<button class="h-8 w-8 rounded-full bg-[#A78BFA]"></button>
+<button class="h-8 w-8 rounded-full bg-[#FBBF24]"></button>
+</div>
+</div>
+</div>
+<div class="relative flex h-80 w-full items-center justify-center bubble-chart-container">
+<div class="bubble bubble-red absolute cursor-pointer" style="top: 20%; left: 10%;">
+<div class="flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-[#F87171]/50 bg-[#F87171]/20 text-center text-sm font-semibold text-[#FEE2E2]">Comercial</div>
+<div class="tooltip absolute -top-14 left-1/2 -translate-x-1/2 transform rounded-lg bg-[#173A5E] px-3 py-2 text-center text-sm text-white shadow-lg">
+<p class="font-semibold">Licencia Comercial</p>
+<p class="font-light">2 datasets</p>
+<div class="absolute -bottom-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 transform bg-[#173A5E]"></div>
+</div>
+</div>
+<div class="bubble bubble-blue absolute cursor-pointer" style="top: 60%; left: 30%;">
+<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-[#60A5FA]/50 bg-[#60A5FA]/20 text-center text-sm font-semibold text-[#DBEAFE]">Investigación</div>
+<div class="tooltip absolute -top-14 left-1/2 -translate-x-1/2 transform rounded-lg bg-[#173A5E] px-3 py-2 text-center text-sm text-white shadow-lg">
+<p class="font-semibold">Licencia de Investigación</p>
+<p class="font-light">1 dataset</p>
+<div class="absolute -bottom-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 transform bg-[#173A5E]"></div>
+</div>
+</div>
+<div class="bubble bubble-green absolute cursor-pointer" style="top: 35%; left: 55%;">
+<div class="flex h-32 w-32 items-center justify-center rounded-full border-2 border-dashed border-[#34D399]/50 bg-[#34D399]/20 text-center text-base font-semibold text-[#D1FAE5]">Uso Educativo</div>
+<div class="tooltip absolute -top-14 left-1/2 -translate-x-1/2 transform rounded-lg bg-[#173A5E] px-3 py-2 text-center text-sm text-white shadow-lg">
+<p class="font-semibold">Licencia Uso Educativo</p>
+<p class="font-light">3 datasets</p>
+<div class="absolute -bottom-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 transform bg-[#173A5E]"></div>
+</div>
+</div>
+<div class="bubble bubble-gray absolute cursor-pointer" style="top: 5%; left: 60%;">
+<div class="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-gray-600/50 bg-gray-800/30 text-center text-sm font-semibold text-gray-300">No Disponible</div>
+<div class="tooltip absolute -top-14 left-1/2 -translate-x-1/2 transform rounded-lg bg-[#173A5E] px-3 py-2 text-center text-sm text-white shadow-lg">
+<p class="font-semibold">No Disponible</p>
+<p class="font-light">1 dataset</p>
+<div class="absolute -bottom-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 transform bg-[#173A5E]"></div>
+</div>
+</div>
+<div class="bubble bubble-gray absolute cursor-pointer" style="top: 70%; left: 70%;">
+<div class="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-gray-600/50 bg-gray-800/30 text-center text-sm font-semibold text-gray-300">No Disponible</div>
+<div class="tooltip absolute -top-14 left-1/2 -translate-x-1/2 transform rounded-lg bg-[#173A5E] px-3 py-2 text-center text-sm text-white shadow-lg">
+<p class="font-semibold">No Disponible</p>
+<p class="font-light">0 datasets</p>
+<div class="absolute -bottom-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 transform bg-[#173A5E]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+    const menuButton = document.getElementById('options-menu');
+    const menu = menuButton.nextElementSibling;
+    menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', (event) => {
+        if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
+</div>
+</body></html>
