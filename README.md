@@ -1,6 +1,8 @@
-# Seismic AI & Blockchain Scaffold
+# NcryptoSeismic
+#Seismic AI & Blockchain
 
 This project aims to automate the detection of faults and other seismic attributes using Artificial Intelligence, starting with Neural Networks. The workflow integrates seismic data (such as SEG-Y files) and leverages blockchain technology to encrypt and control access to these sensitive datasets.
+We used the Lisk scaffold version to deploy and test the initial contract, Zama for secure encryption of SGY files, and IA for initial fault detection.
 
 ## Main Features
 
@@ -11,10 +13,10 @@ This project aims to automate the detection of faults and other seismic attribut
 
 ## Project Structure
 
-- `packages/hardhat/contracts/SeismicRegistry2.sol`: Main smart contract for seismic data registration, licensing, and encrypted access control.
-- `packages/hardhat/test/SeismicRegistry.test.ts`: Unit tests for the registry contract, covering dataset registration, licensing, purchases, and withdrawals.
-- `packages/hardhat/deploy/00_deploy_seismic_registry.ts`: Deployment script for the registry contract.
-- `packages/nextjs/`: Frontend scaffold for interacting with smart contracts and visualizing seismic data and AI results.
+- `scaffold-lisk/packages/hardhat/contracts/SeismicRegistry2.sol`: Main smart contract for seismic data registration, licensing, and encrypted access control.
+- `scaffold-lisk/packages/hardhat/test/SeismicRegistry.test.ts`: Unit tests for the registry contract, covering dataset registration, licensing, purchases, and withdrawals.
+- `scaffold-lisk/packages/hardhat/deploy/00_deploy_seismic_registry.ts`: Deployment script for the registry contract.
+- `scaffold-lisk/packages/nextjs/`: Frontend scaffold for interacting with smart contracts and visualizing seismic data and AI results.
 
 ## Quickstart
 
